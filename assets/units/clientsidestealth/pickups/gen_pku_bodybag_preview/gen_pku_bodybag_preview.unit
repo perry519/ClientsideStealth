@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="14">
+	<object file="units/payday2/pickups/gen_pku_bodybag/gen_pku_bodybag" />
+	<dependencies>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="carry_drop" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="_ray_object_names" type="table">
+				<var value="head" />
+				<var value="foot" />
+			</var>
+		</extension>
+		<extension name="carry_data" class="CarryData">
+		</extension>
+		<extension name="attention" class="AIAttentionObject">
+			<var name="_initial_settings" value="prop_carry_bodybag" />
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="sound" />
+		<soundsource name="sound" source="sound" />
+	</sounds>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+	<object file="units/payday2/equipment/gen_equipment_ammobag/gen_equipment_ammobag"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData"/>
+		<extension name="base" class="AmmoBagBase"/>
+		<extension name="damage" class="UnitDamage"/>
+		<extension name="interaction" class="AmmoBagInteractionExt">
+			<var name="tweak_data" value="ammo_bag"/>
+		</extension>
+	</extensions>
+	<sounds><default_soundsource source="rp_gen_equipment_ammobag"/></sounds>
+</unit>

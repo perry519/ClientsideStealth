@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<tweak version="2" name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+	</search>
+	<target mode="insert">
+		<rpc>
+			<message name="cst_rpc_v1_ping" delivery="ordered" receiver="unit">
+				<param type="int" min="1" max="1"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_ack" delivery="ordered" receiver="unit">
+				<param type="int" min="1" max="1"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_hello" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_ready" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_report" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="2"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="8"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="7"/>
+				<param type="int" min="0" max="3"/>
+				<param type="string"/>
+				<param type="int" min="-1" max="1000000000"/>
+				<param type="int" min="-1" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_resync" delivery="ordered" receiver="unit" check="client_to_server"/>
+			<message name="cst_rpc_v1_state_begin" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="65536"/>
+				<param type="int" min="0" max="65536"/>
+				<param type="int" min="0" max="65536"/>
+				<param type="int" min="0" max="65536"/>
+				<param type="int" min="0" max="65536"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="65536"/>
+			</message>
+			<message name="cst_rpc_v1_state_owner" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="8"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="-1" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_state_target" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="8"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="int" min="0" max="2"/>
+				<param type="int" min="0" max="2"/>
+				<param type="int" min="-1" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_state_observation" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="2"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="8"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="7"/>
+				<param type="int" min="0" max="3"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="int" min="0" max="2"/>
+				<param type="int" min="0" max="2"/>
+				<param type="string"/>
+				<param type="int" min="0" max="2"/>
+			</message>
+			<message name="cst_rpc_v1_state_camera" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="bool"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="int" min="0" max="2"/>
+				<param type="int" min="0" max="2"/>
+				<param type="int" min="0" max="2"/>
+			</message>
+			<message name="cst_rpc_v1_state_commit" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_bag_dropdeny" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_bag_release" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_bag_clear" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_bag_held" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_bag_drop" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="int" min="-100" max="100"/>
+				<param type="string"/>
+			</message>
+			<message name="cst_rpc_v1_bag_secure" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="string"/>
+				<param type="int" min="1" max="1000000000"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="string"/>
+				<param type="int" min="1" max="1000000000"/>
+				<param type="int" min="1" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_bag_secure_ack" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="string"/>
+				<param type="int" min="0" max="1"/>
+				<param type="int" min="1" max="1000000000"/>
+				<param type="int" min="1" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_prediction_identity" delivery="ordered" receiver="unit" check="server_to_client"><param type="string"/></message>
+			<message name="cst_rpc_v1_prediction_claim" delivery="ordered" receiver="unit" check="client_to_server"><param type="string"/></message>
+			<message name="cst_rpc_v1_prediction_observe" delivery="ordered" receiver="unit" check="client_to_server"><param type="string"/></message>
+			<message name="cst_rpc_v1_prediction_decision" delivery="ordered" receiver="unit" check="server_to_client"><param type="string"/></message>
+			<message name="cst_rpc_v1_prediction_cancel" delivery="ordered" receiver="unit" check="client_to_server"><param type="string"/></message>
+			<message name="cst_rpc_v1_prediction_ack" delivery="ordered" receiver="unit" check="server_to_client"><param type="string"/></message>
+			<message name="cst_rpc_v1_prediction_settled" delivery="ordered" receiver="unit" check="client_to_server"><param type="string"/></message>
+			<message name="cst_rpc_v1_state_observer" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="1" max="2"/>
+				<param type="int" min="0" max="1000000000"/>
+				<param type="int" min="0" max="1000000000"/>
+			</message>
+			<message name="cst_rpc_v1_camera_hud" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="string"/>
+			</message>
+			<message name="cst_rpc_v1_state_remove" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="int" min="0" max="1000000000"/>
+				<param type="string"/>
+			</message>
+			<message name="cst_rpc_v1_peer" delivery="ordered" receiver="unit"><param type="string"/></message>
+			<message name="cst_rpc_v1_peer_relay" delivery="ordered" receiver="unit" check="server_to_client"><param type="string"/></message>
+			<message name="cst_rpc_v1_peer_receipt" delivery="ordered" receiver="unit" check="client_to_server"><param type="string"/></message>
+		</rpc>
+	</target>
+</tweak>

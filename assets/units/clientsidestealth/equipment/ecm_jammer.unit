@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+	<object file="units/payday2/equipment/gen_equipment_jammer/gen_equipment_jammer"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData"/>
+		<extension name="base" class="ECMJammerBase">
+			<var name="is_ecmjammer" value="true"/>
+		</extension>
+		<extension name="interaction" class="ECMJammerInteractionExt">
+			<var name="tweak_data" value="ecm_jammer"/>
+		</extension>
+		<extension name="contour" class="ContourExt"/>
+	</extensions>
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx"/>
+	</dependencies>
+	<sounds><default_soundsource source="rp_gen_equipment_jammer"/></sounds>
+</unit>
